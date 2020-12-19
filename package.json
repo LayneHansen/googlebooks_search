@@ -1,0 +1,31 @@
+{
+  "name": "googlebooks_search",
+  "version": "1.0.0",
+  "description": "This application is used to search for books in Google Books.",
+  "main": "server.js",
+  "repository": "git@github.com:LayneHansen/googlebooks_search.git",
+  "author": "LayneHansen <layne.d.hansen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "nodemon ./server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LayneHansen/mern_demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LayneHansen/mern_demo/issues"
+  },
+  "homepage": "https://github.com/LayneHansen/mern_demo#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.7",
+    "nodemon": "^2.0.6",
+    "react-router-dom": "^5.2.0"
+  }
+}
