@@ -1,0 +1,17 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+  
+#grad {
+    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(45, 100, 100));
+  }
+
+  #app-title {
+    color: whitesmoke;
+  }
+
+  #app-subtitle {
+    color: white;
+  }

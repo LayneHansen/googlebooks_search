@@ -5,6 +5,8 @@ import Homepage from "./pages/Homepage";
 import SearchPage from "./pages/SearchPage";
 import TopCard from './components/TopCard';
 import './App.css';
+import { Button, Card, Container, Jumbotron, Row, Col, ListGroup } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
