@@ -1,7 +1,16 @@
-const api = {
-    getTodos: function () {
-        return fetch('/api/todos').then(res => res.json());
+import axios from 'axios';
+
+export default {
+    getBooks: function() {
+        return axios.get('/api/books');
+    },
+    getBook: function(id) {
+        return axios.get('/api/books/' + id);
+    },
+    deleteBook: function(id) {
+        return axios.delete('/api/books' + id);
+    },
+    saveBook: function(bookData) {
+        return axios.post('/api/books', bookData);
     }
 }
-
-export default api;

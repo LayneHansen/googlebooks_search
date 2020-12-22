@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <GlobalProvider>
-        <TopCard />
+        {/* <TopCard /> */}
         <div className="App">
           <Switch>
             <Route exact path="/" component={Homepage} />

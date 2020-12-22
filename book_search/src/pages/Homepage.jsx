@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import API from '../utils/API';
+import TopCard from '../components/TopCard';
+import Navbar from '../components/Navbar';
+import BodyTron from '../components/BodyTron';
 import { useGlobalContext } from '../utils/GlobalContext';
 
 const Homepage = () => {
-    // const [state, dispatch] = useGlobalContext();
-    // const [searchBooks, setBook] = useState('');
+    const [books, setBooks] = useState([])
+    const [formObject, setFormObject] = useState([])
+    
+    useEffect(() => {
+        displayBooks()
+    }, [])
 
-    // useEffect(() => {
-    //     async function fetchBooks() {
-    //         console.log('hit fetchBooks');
-    //         try {
-    //             const response = await fetch('/api/search');
-    //             const data = await response.json();
-    //             console.log({ data });
-
-    //             dispatch({ type: ""})
-    //         } catch (err) {
-    //           console.log({ err });
-    //         }
-    //     }
-
-    //     fetchBooks();
-    // ),  []);
+    function displayBooks(){
+        API.getBooks()
+        .then (res => 
+            setBooks(res.data))
+        .catch(err => console.log (err));
+    }
 
     return (
-        <h1>Hello</h1>
+        <>
+        <TopCard />
+        <Navbar />
+        <BodyTron />
+        </>
     );
      };
 

@@ -20,8 +20,6 @@ const TopCard = () => {
             </footer>
             </blockquote>
         </Card.Body>
-        <Navbar />
-        <BodyTron />
         </Card>
         </>
     )
