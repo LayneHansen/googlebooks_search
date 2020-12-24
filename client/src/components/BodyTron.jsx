@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './BodyTron.css';
 import { Jumbotron, Container, Form, Button, } from 'react-bootstrap';
 
-const BodyTron = () => {
+const BodyTron = (props) => {
+    const [title, setTitle] = useState("")
+
     return (
         <Jumbotron fluid>
             <Container>
@@ -11,8 +13,8 @@ const BodyTron = () => {
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label></Form.Label>
                     <Form.Control type="input" placeholder="Search Books" 
-                    onChange={() => {}}
-                    name="title"
+                    onChange={(e) => {setTitle(e.target.value)}}
+                    value={title}
                     placeholder="Title"
                     />
                     <Form.Control type="input" placeholder="Search Books" 
@@ -25,9 +27,16 @@ const BodyTron = () => {
                     </Form.Text>
                 </Form.Group>
 
-                <Button variant="info" type="submit">
+                <Button variant="info" type="submit"
+                    onClick={function (event) {
+                        event.preventDefault();
+                        console.log('whatever', title);
+                        props.bookSearch(title);
+                    }}
+                >
                     SEARCH
                 </Button>
+
                 </Form>
             </Container>
         </Jumbotron>

@@ -1,20 +1,20 @@
 const router = require('express').Router();
+const booksController = require('../controllers/bookController');
 const { Search } = require('../models');
 
-router  
-    .route('/')
+router.route('/')
     .get((req, res) => {
-      Search
-        .find({})
-        .then(data => {
-            console.log('SEARCH GET');
-            console.log({ data })
-            res.json({ success: true, data })
-        })
-        .catch(err => {
-            console.log({ err });
-            res.json({ success: false });
-        });
+    //   Search
+    //     .find({})
+    //     .then(data => {
+    //         console.log('SEARCH GET');
+    //         console.log({ data })
+    //         res.json({ success: true, data })
+    //     })
+    //     .catch(err => {
+    //         console.log({ err });
+    //         res.json({ success: false });
+    //     })
         console.log('hit the get route in /api/search');
         res.json({ search: "find a good book" });
     })

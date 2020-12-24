@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const searchSchema = new Schema({
+const Search = new Schema({
     title: {
         type: String,
         required: true},
@@ -16,13 +16,7 @@ const searchSchema = new Schema({
         required: true},
     link: {
         type: String,
-        required: true},
-    date: {
-        type: Date, 
-        default: Date.now
-    }
+        required: true}
 });
 
-
-
-module.exports = searchSchema;
+module.exports = Search;

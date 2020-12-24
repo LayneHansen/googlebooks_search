@@ -15,9 +15,6 @@ const TopCard = () => {
         <Card.Body id="grad">
             <blockquote className="blockquote mb-0">
             <h1 id="app-title">Your Next Read</h1>
-            <footer className="blockquote-footer" id="app-subtitle">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-            </footer>
             </blockquote>
         </Card.Body>
         </Card>
