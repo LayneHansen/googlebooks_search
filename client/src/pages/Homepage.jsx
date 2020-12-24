@@ -3,7 +3,7 @@ import API from '../utils/API';
 import TopCard from '../components/TopCard';
 import Navbar from '../components/Navbar';
 import BodyTron from '../components/BodyTron';
-import { Jumbotron, Container, Form, Button, Card } from 'react-bootstrap';
+import { Jumbotron, Container, Form, Button, Card, ButtonGroup } from 'react-bootstrap';
 import { useGlobalContext } from '../utils/GlobalContext';
 import axios from 'axios';
 
@@ -45,6 +45,12 @@ const Homepage = () => {
                 <p>{book.volumeInfo.description}</p>
                 <p>{book.volumeInfo.publishedDate}</p>
                 <p>{book.saleInfo.buyLink}</p>
+                <ButtonGroup aria-label="Basic example" className="mr-3">
+                    <Button variant="info">SAVE</Button>
+                </ButtonGroup>
+                <ButtonGroup>
+                    <Button variant="info">UNSAVE</Button>
+                </ButtonGroup>
             </Card>
 
         </>
