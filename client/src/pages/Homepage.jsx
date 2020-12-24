@@ -3,6 +3,7 @@ import API from '../utils/API';
 import TopCard from '../components/TopCard';
 import Navbar from '../components/Navbar';
 import BodyTron from '../components/BodyTron';
+import { Jumbotron, Container, Form, Button, Card } from 'react-bootstrap';
 import { useGlobalContext } from '../utils/GlobalContext';
 import axios from 'axios';
 
@@ -35,14 +36,19 @@ const Homepage = () => {
             bookSearch={googleBookSearch}
         />
         
-        {books.map(book => <>
-            <p>{book.volumeInfo.title}</p>
-            <p>{book.volumeInto.author}</p>
-            <p>{}</p>
-            <p>{}</p>
-            <p>{}</p>
+        {books.map(book => 
+        <>
+            <Card body>
+                <p>{book.volumeInfo.imageLinks.thumbnail}</p>
+                <p>{book.volumeInfo.title}</p>
+                <p>{book.volumeInfo.authors}</p>
+                <p>{book.volumeInfo.description}</p>
+                <p>{book.volumeInfo.publishedDate}</p>
+                <p>{book.saleInfo.buyLink}</p>
+            </Card>
 
-        </>)}
+        </>
+        )}
 
         </>
     );
