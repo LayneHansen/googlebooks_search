@@ -37,7 +37,7 @@ const Homepage = () => {
         
         {books.map(book => <>
             <p>{book.volumeInfo.title}</p>
-            <p>{}</p>
+            <p>{book.volumeInto.author}</p>
             <p>{}</p>
             <p>{}</p>
             <p>{}</p>
