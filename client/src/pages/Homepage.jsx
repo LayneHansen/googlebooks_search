@@ -39,14 +39,18 @@ const Homepage = () => {
         {books.map(book => 
         <>
             <Card body>
-                <p>{book.volumeInfo.imageLinks.thumbnail}</p>
-                <p>{book.volumeInfo.title}</p>
-                <p>{book.volumeInfo.authors}</p>
-                <p>{book.volumeInfo.description}</p>
-                <p>{book.volumeInfo.publishedDate}</p>
-                <p>{book.saleInfo.buyLink}</p>
+                <img src={book.volumeInfo.imageLinks.thumbnail} />
+                <h3>{book.volumeInfo.title}</h3>
+                <h5>{book.volumeInfo.authors}</h5>
+                <p><span styling="strong">Synopsis: </span>{book.volumeInfo.description}</p>
+                <p>Publication Date: {book.volumeInfo.publishedDate}</p>
+                <Button variant="outline-info" href={book.saleInfo.buyLink}>Click to Buy</Button>{' '}
+                <br /><br />
                 <ButtonGroup aria-label="Basic example" className="mr-3">
-                    <Button variant="info">SAVE</Button>
+                    <Button variant="info" key={book.title} a href={"/server/routes/search.routes.js"}>
+                    SAVE
+                    
+                    </Button>
                 </ButtonGroup>
                 <ButtonGroup>
                     <Button variant="info">UNSAVE</Button>

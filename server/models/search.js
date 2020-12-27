@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const Search = new Schema({
+const SearchSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true},
@@ -18,5 +17,7 @@ const Search = new Schema({
         type: String,
         required: true}
 });
+
+const Search = mongoose.model('Search', SearchSchema)
 
 module.exports = Search;
