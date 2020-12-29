@@ -22,11 +22,15 @@ const Homepage = () => {
         .catch(err => console.log (err));
     }
 
-        const googleBookSearch = (title) => {
-            console.log(title, "this is the title");
-            axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title)
-              .then((res) => {setBooks(res.data.items)})
-        }
+    const googleBookSearch = (title) => {
+        axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title)
+            .then((res) => {setBooks(res.data.items)})
+    }
+
+    const saveBook = (book) => {
+        API.saveBook(book)
+        .then(res => setBooks([...books, res.data]))
+    }
 
     return (
         <>
@@ -36,7 +40,7 @@ const Homepage = () => {
             bookSearch={googleBookSearch}
         />
         
-        {books.map(book => 
+        {books.map((book, index) => 
         <>
             <Card body>
                 <img src={book.volumeInfo.imageLinks.thumbnail} />
@@ -47,9 +51,10 @@ const Homepage = () => {
                 <Button variant="outline-info" href={book.saleInfo.buyLink}>Click to Buy</Button>{' '}
                 <br /><br />
                 <ButtonGroup aria-label="Basic example" className="mr-3">
-                    <Button variant="info" key={book.title} a href={"/server/routes/search.routes.js"}>
-                    SAVE
-                    
+                    <Button variant="info" key={book.title} 
+                    onClick={() => saveBook(books[index])}
+                    >
+                    SAVE                   
                     </Button>
                 </ButtonGroup>
                 <ButtonGroup>

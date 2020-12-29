@@ -22,7 +22,7 @@ const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, defaultState);
 
     return (
-        <GlobalContext.Provider value={{ a: "Hello", b: "World"}} {...props} />
+        <GlobalContext.Provider value={[state, dispatch]} {...props} />
     )
 };
 
