@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const search = require('./search.routes');
+const db = require('../models');
+const mongoose = require('mongoose');
 
-// router.get("/test", (req, res) => {
-//     res.send("test")
-// })
+// mongoose.connect(
+//     process.env.MONGODB_URI || "mongodb://"
+// )
 
 router.use('/api/search', search)
-
-const db= [];
 
 router.get('/api/books', (req, res) => {
     res.json(db);
