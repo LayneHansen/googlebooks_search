@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const SearchSchema = new mongoose.Schema({
+const BookSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true},
@@ -18,6 +18,6 @@ const SearchSchema = new mongoose.Schema({
         required: true}
 });
 
-const Search = mongoose.model('Search', SearchSchema)
+const Book = mongoose.model('Book', BookSchema)
 
-module.exports = Search;
+module.exports = Book;

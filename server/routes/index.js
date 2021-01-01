@@ -1,23 +1,6 @@
 const router = require('express').Router();
-const search = require('./search.routes');
-const db = require('../models');
-const mongoose = require('mongoose');
+const books = require('./books.routes');
 
-// mongoose.connect(
-//     process.env.MONGODB_URI || "mongodb://"
-// )
-
-router.use('/api/search', search)
-
-router.get('/api/books', (req, res) => {
-    res.json(db);
-    console.log(db)
-})
-
-router.post('/api/books', (req, res) => {
-    db.push(req.body)
-    res.json(req.body);
-})
-
+router.use('/api/books', books)
 
 module.exports = router; 

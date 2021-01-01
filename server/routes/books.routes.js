@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const booksController = require('../controllers/bookController');
-const { Search } = require('../models');
+const { Book } = require('../models');
 
 router.route('/')
     .get((req, res) => {
-      Search
+        
+      Book
         .find({})
         .then(data => {
             console.log('SEARCH GET');
@@ -20,7 +20,7 @@ router.route('/')
         console.log({ reqBody: req.body });
         res.json({ success: true });
         
-        Search
+        Book
         .create({
             text: req.body.text
         })
