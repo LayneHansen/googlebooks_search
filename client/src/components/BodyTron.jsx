@@ -5,9 +5,7 @@ import { Jumbotron, Container, Form, Button, } from 'react-bootstrap';
 const BodyTron = (props) => {
     const [title, setTitle] = useState("")
     const [author, setAuthor] = useState("")
-
-    console.log("Here we go again")
-    
+ 
     return (
         <Jumbotron fluid>
             <Container>

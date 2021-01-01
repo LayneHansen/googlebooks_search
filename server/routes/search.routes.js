@@ -15,8 +15,6 @@ router.route('/')
             console.log({ err });
             res.json({ success: false });
         })
-        console.log('hit the get route in /api/search');
-        res.json({ search: "find a good book" });
     })
     .post((req, res) => {
         console.log({ reqBody: req.body });
@@ -36,9 +34,8 @@ router.route('/')
         });
     });
 
-router.route('/search')
+router.route('/books')
     
-
 router.route('/:id')
     .delete((req, res) => {
         console.log(req.params);

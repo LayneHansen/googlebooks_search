@@ -11,6 +11,7 @@ router.use('/api/search', search)
 
 router.get('/api/books', (req, res) => {
     res.json(db);
+    console.log(db)
 })
 
 router.post('/api/books', (req, res) => {
