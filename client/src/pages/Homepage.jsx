@@ -3,11 +3,12 @@ import API from '../utils/API';
 import TopCard from '../components/TopCard';
 import Navbar from '../components/Navbar';
 import BodyTron from '../components/BodyTron';
-import { Jumbotron, Container, Form, Button, Card, ButtonGroup } from 'react-bootstrap';
+import { Button, Card, ButtonGroup } from 'react-bootstrap';
 import { useGlobalContext } from '../utils/GlobalContext';
 import axios from 'axios';
 
 const Homepage = () => {
+    const [, dispatch] = useGlobalContext();
     const [books, setBooks] = useState([])
     
     useEffect(() => {
@@ -24,7 +25,6 @@ const Homepage = () => {
         axios.get("https://www.googleapis.com/books/v1/volumes?q=" + title)
         .then((res) => setBooks(res.data.items))
         .catch(err => console.log (err));
-        console.log(res.data.items)
     }
 
     const saveBook = (book) => {

@@ -2,17 +2,12 @@ import { createContext, useContext, useReducer } from 'react';
 
 const GlobalContext = createContext();
 
-const defaultState = {
-    books: []
-};
+const defaultState = { books: [] };
 
 const reducer = (state, action) => {
     switch(action.type) {
         case 'setBooks':
-            return {
-                ...state,
-                todos: action.payload
-            };
+            return {...state, todos: action.payload};
         default: 
             return state;
     }
